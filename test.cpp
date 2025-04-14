@@ -14,7 +14,7 @@ struct Matrices
     Matrices() : first(3), second(3), third(4)
     {
         // 1-9
-        int value = 1;
+        double value = 1;
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 first[i][j] = value++;
@@ -168,15 +168,15 @@ TEST_CASE_FIXTURE(Matrices, "Operator/")
 {
     SquareMat result = second / 8;
 
-    CHECK(result[0][0] == 1); //10 / 8 = 1
-    CHECK(result[0][1] == 1); //11 / 8 = 1
-    CHECK(result[0][2] == 1); //...
-    CHECK(result[1][0] == 1);
-    CHECK(result[1][1] == 1);
-    CHECK(result[1][2] == 1);
-    CHECK(result[2][0] == 2); //16 / 8 = 2
-    CHECK(result[2][1] == 2);
-    CHECK(result[2][2] == 2);
+    CHECK(result[0][0] == 1.25);
+    CHECK(result[0][1] == 1.375);
+    CHECK(result[0][2] == 1.5);
+    CHECK(result[1][0] == 1.625);
+    CHECK(result[1][1] == 1.75);
+    CHECK(result[1][2] == 1.875);
+    CHECK(result[2][0] == 2);
+    CHECK(result[2][1] == 2.125);
+    CHECK(result[2][2] == 2.25);
 }
 
 TEST_CASE_FIXTURE(Matrices, "Operator^")
@@ -320,8 +320,8 @@ TEST_CASE_FIXTURE(Matrices, "Operator~")
 //But the LValue implementation wasn't tested yet
 TEST_CASE_FIXTURE(Matrices, "Operator[]")
 {
-    int* row = first[2];
-    int check = first[1][0];
+    double* row = first[2];
+    double check = first[1][0];
 
     CHECK(row[0] == 7);
     CHECK(row[1] == 8);
@@ -374,9 +374,9 @@ TEST_CASE_FIXTURE(Matrices, "Operator<>>=>=")
 
 TEST_CASE_FIXTURE(Matrices, "Operator!")
 {
-    int result1 = !first;
-    int result2 = !second;
-    int result3 = !third;
+    double result1 = !first;
+    double result2 = !second;
+    double result3 = !third;
 
     CHECK(result1 == 0);
     CHECK(result2 == 0);
@@ -494,15 +494,15 @@ TEST_CASE_FIXTURE(Matrices, "Operator/")
 {
     second /= 8;
 
-    CHECK(second[0][0] == 1); //10 / 8 = 1
-    CHECK(second[0][1] == 1); //11 / 8 = 1
-    CHECK(second[0][2] == 1); //...
-    CHECK(second[1][0] == 1);
-    CHECK(second[1][1] == 1);
-    CHECK(second[1][2] == 1);
-    CHECK(second[2][0] == 2); //16 / 8 = 2
-    CHECK(second[2][1] == 2);
-    CHECK(second[2][2] == 2);
+    CHECK(second[0][0] == 1.25);
+    CHECK(second[0][1] == 1.375);
+    CHECK(second[0][2] == 1.5);
+    CHECK(second[1][0] == 1.625);
+    CHECK(second[1][1] == 1.75);
+    CHECK(second[1][2] == 1.875);
+    CHECK(second[2][0] == 2);
+    CHECK(second[2][1] == 2.125);
+    CHECK(second[2][2] == 2.25);
 }
 
 TEST_CASE_FIXTURE(Matrices, "Operator<<")

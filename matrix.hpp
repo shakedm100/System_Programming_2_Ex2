@@ -6,7 +6,7 @@ namespace matrixImp {
     class SquareMat {
     private:
         int size;
-        int** matrix;
+        double** matrix;
 
     public:
         SquareMat(int size);
@@ -28,8 +28,8 @@ namespace matrixImp {
         SquareMat operator--();
         SquareMat operator--(int postfix_dummy);
         SquareMat operator~();
-        int* operator[](int i) const;
-        int*& operator[](int i);
+        double* operator[](int i) const;
+        double*& operator[](int i);
         bool operator==(const SquareMat& compare) const;
         bool operator!=(const SquareMat& compare) const;
         bool operator<(const SquareMat& compare) const;

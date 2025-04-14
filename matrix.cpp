@@ -8,12 +8,12 @@ namespace matrixImp {
 
     SquareMat::SquareMat(const int size) : size(size)
     {
-        matrix = new int*[size];
+        matrix = new double*[size];
 
         //Initialize the memory and the value of all the matrix to 0
         for (int i = 0; i < size; i++)
         {
-            matrix[i] = new int[size];
+            matrix[i] = new double[size];
             for (int j = 0; j < size; j++)
             {
                 matrix[i][j] = 0;
@@ -33,11 +33,11 @@ namespace matrixImp {
 
     SquareMat::SquareMat(const SquareMat &copy) : size(copy.size)
     {
-        this->matrix = new int*[size];
+        this->matrix = new double*[size];
 
         for (int i = 0; i < size; i++)
         {
-            this->matrix[i] = new int[size];
+            this->matrix[i] = new double[size];
             for (int j = 0; j < size; j++)
             {
                 this->matrix[i][j] = copy.matrix[i][j];
@@ -69,10 +69,10 @@ namespace matrixImp {
             delete[] matrix;
 
             this->size = copy.size;
-            matrix = new int*[copy.size];
+            matrix = new double*[copy.size];
             for (int i = 0; i < copy.size; i++)
             {
-                matrix[i] = new int[copy.size];
+                matrix[i] = new double[copy.size];
             }
         }
 
@@ -233,7 +233,7 @@ namespace matrixImp {
         {
             for(int j = 0; j < size; j++)
             {
-                scalarMulMat.matrix[i][j] = matrix[i][j] % scalar;
+                scalarMulMat.matrix[i][j] = (int)matrix[i][j] % scalar;
             }
         }
 
@@ -377,7 +377,7 @@ namespace matrixImp {
      * @return A pointer to the row.
      * @throws out_of_range if index is invalid.
      */
-    int* SquareMat::operator[](const int i) const
+    double* SquareMat::operator[](const int i) const
     {
         if(i < 0 || i >= size)
             throw std::out_of_range("Index out of range");
@@ -391,7 +391,7 @@ namespace matrixImp {
      * @return A reference to a pointer to the row.
      * @throws out_of_range if index is invalid.
      */
-    int*& SquareMat::operator[](const int i)
+    double*& SquareMat::operator[](const int i)
     {
         if(i < 0 || i >= size)
             throw std::out_of_range("Index out of range");
@@ -406,7 +406,7 @@ namespace matrixImp {
      * @param sumOriginal Sum of the first matrix elements.
      * @param sumOther Sum of the second matrix elements.
      */
-    void sumMatrices(const SquareMat& original, const SquareMat& other, int& sumOriginal, int& sumOther)
+    void sumMatrices(const SquareMat& original, const SquareMat& other, double& sumOriginal, double& sumOther)
     {
         for(int i = 0; i < original.getSize(); i++)
         {
@@ -432,7 +432,7 @@ namespace matrixImp {
      */
     bool SquareMat::operator==(const SquareMat &compare) const
     {
-        int sumThis = 0, sumCompare = 0;
+        double sumThis = 0, sumCompare = 0;
 
         sumMatrices(*this, compare, sumThis, sumCompare);
 
@@ -448,7 +448,7 @@ namespace matrixImp {
      */
     bool SquareMat::operator!=(const SquareMat &compare) const
     {
-        int sumThis = 0, sumCompare = 0;
+        double sumThis = 0, sumCompare = 0;
 
         sumMatrices(*this, compare, sumThis, sumCompare);
 
@@ -464,7 +464,7 @@ namespace matrixImp {
      */
     bool SquareMat::operator<(const SquareMat &compare) const
     {
-        int sumThis = 0, sumCompare = 0;
+        double sumThis = 0, sumCompare = 0;
 
         sumMatrices(*this, compare, sumThis, sumCompare);
 
@@ -480,7 +480,7 @@ namespace matrixImp {
      */
     bool SquareMat::operator>(const SquareMat &compare) const
     {
-        int sumThis = 0, sumCompare = 0;
+        double sumThis = 0, sumCompare = 0;
 
         sumMatrices(*this, compare, sumThis, sumCompare);
 
@@ -496,7 +496,7 @@ namespace matrixImp {
      */
     bool SquareMat::operator<=(const SquareMat &compare) const
     {
-        int sumThis = 0, sumCompare = 0;
+        double sumThis = 0, sumCompare = 0;
 
         sumMatrices(*this, compare, sumThis, sumCompare);
 
@@ -512,7 +512,7 @@ namespace matrixImp {
      */
     bool SquareMat::operator>=(const SquareMat &compare) const
     {
-        int sumThis = 0, sumCompare = 0;
+        double sumThis = 0, sumCompare = 0;
 
         sumMatrices(*this, compare, sumThis, sumCompare);
 
