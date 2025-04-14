@@ -7,7 +7,7 @@ This project implements SquareMat class which is a square matrix and matrix rela
    Add or subtract two matrices.
 
 2. **Unary minus(-) operator**  
-   Every value in the matrix becomes it's negative counterpart.
+   Negates all elements of the matrix.
 
 3. **Matrix/Scalar(*) multiplication**  
    Executes multipication between two matrices or a matrix and scalar.
@@ -22,7 +22,7 @@ This project implements SquareMat class which is a square matrix and matrix rela
     Divies all the members of the matrix with a number.
 
 7. **Exponent(^)**
-    Increases the matrix by power of given number.
+    Raises the matrix to an integer power.
 
 8. **Increase(++) and Decrease(--)**
     Increases or decreases all the members of a matrix by one, implements prefix and postfix implementations.
