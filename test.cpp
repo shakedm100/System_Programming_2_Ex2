@@ -1,5 +1,3 @@
-// shaked1mi@gmail.com
-
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 
 #include "doctest.h"
@@ -216,15 +214,25 @@ TEST_CASE_FIXTURE(Matrices, "Operator++")
     SquareMat result = first++;
     SquareMat result2 = ++second;
 
-    CHECK(result[0][0] == 2);
-    CHECK(result[0][1] == 3);
-    CHECK(result[0][2] == 4);
-    CHECK(result[1][0] == 5);
-    CHECK(result[1][1] == 6);
-    CHECK(result[1][2] == 7);
-    CHECK(result[2][0] == 8);
-    CHECK(result[2][1] == 9);
-    CHECK(result[2][2] == 10);
+    CHECK(first[0][0] == 2);
+    CHECK(first[0][1] == 3);
+    CHECK(first[0][2] == 4);
+    CHECK(first[1][0] == 5);
+    CHECK(first[1][1] == 6);
+    CHECK(first[1][2] == 7);
+    CHECK(first[2][0] == 8);
+    CHECK(first[2][1] == 9);
+    CHECK(first[2][2] == 10);
+
+    CHECK(result[0][0] == 1);
+    CHECK(result[0][1] == 2);
+    CHECK(result[0][2] == 3);
+    CHECK(result[1][0] == 4);
+    CHECK(result[1][1] == 5);
+    CHECK(result[1][2] == 6);
+    CHECK(result[2][0] == 7);
+    CHECK(result[2][1] == 8);
+    CHECK(result[2][2] == 9);
 
     CHECK(result2[0][0] == 11);
     CHECK(result2[0][1] == 12);
@@ -243,15 +251,25 @@ TEST_CASE_FIXTURE(Matrices, "Operator--")
     SquareMat result = first--;
     SquareMat result2 = --second;
 
-    CHECK(result[0][0] == 0);
-    CHECK(result[0][1] == 1);
-    CHECK(result[0][2] == 2);
-    CHECK(result[1][0] == 3);
-    CHECK(result[1][1] == 4);
-    CHECK(result[1][2] == 5);
-    CHECK(result[2][0] == 6);
-    CHECK(result[2][1] == 7);
-    CHECK(result[2][2] == 8);
+    CHECK(first[0][0] == 0);
+    CHECK(first[0][1] == 1);
+    CHECK(first[0][2] == 2);
+    CHECK(first[1][0] == 3);
+    CHECK(first[1][1] == 4);
+    CHECK(first[1][2] == 5);
+    CHECK(first[2][0] == 6);
+    CHECK(first[2][1] == 7);
+    CHECK(first[2][2] == 8);
+
+    CHECK(result[0][0] == 1);
+    CHECK(result[0][1] == 2);
+    CHECK(result[0][2] == 3);
+    CHECK(result[1][0] == 4);
+    CHECK(result[1][1] == 5);
+    CHECK(result[1][2] == 6);
+    CHECK(result[2][0] == 7);
+    CHECK(result[2][1] == 8);
+    CHECK(result[2][2] == 9);
 
     CHECK(result2[0][0] == 9);
     CHECK(result2[0][1] == 10);

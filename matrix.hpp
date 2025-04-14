@@ -1,5 +1,3 @@
-// shaked1mi@gmail.com
-
 #pragma once
 #include <ostream>
 
@@ -26,9 +24,9 @@ namespace matrixImp {
         SquareMat operator/(int divide) const;
         SquareMat operator^(int pow) const;
         SquareMat operator++();
-        SquareMat operator++(int postfix_dummy) const;
+        SquareMat operator++(int postfix_dummy);
         SquareMat operator--();
-        SquareMat operator--(int postfix_dummy) const;
+        SquareMat operator--(int postfix_dummy);
         SquareMat operator~();
         int* operator[](int i) const;
         int*& operator[](int i);
