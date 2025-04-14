@@ -1,4 +1,4 @@
-# Exercise 1: Graph Algorithms
+# Exercise 2: Square Matrix & Operators
 
 ## Overview
 This project implements SquareMat class which is a square matrix and matrix related operators.
