@@ -355,7 +355,7 @@ namespace matrixImp {
     }
 
     /**
-     * @brief Transposes the matrix in place.
+     * @brief Transposes the matrix.
      * @return Reference to the transposed matrix.
      */
     SquareMat SquareMat::operator~()
