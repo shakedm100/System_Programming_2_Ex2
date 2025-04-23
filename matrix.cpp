@@ -2,6 +2,7 @@
 
 #include "matrix.hpp"
 #include <stdexcept>
+#include <cmath>
 
 using namespace std;
 namespace matrixImp {
@@ -233,7 +234,7 @@ namespace matrixImp {
         {
             for(int j = 0; j < size; j++)
             {
-                scalarMulMat.matrix[i][j] = (int)matrix[i][j] % scalar;
+                scalarMulMat.matrix[i][j] = fmod(matrix[i][j], scalar); // To handle mod with double
             }
         }
 
