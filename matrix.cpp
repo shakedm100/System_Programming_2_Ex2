@@ -244,9 +244,13 @@ namespace matrixImp {
      * @brief Divides each element of the matrix by a scalar.
      * @param divide The integer divisor.
      * @return A new matrix with divided elements.
+     * @throws exception if divide is zero
      */
     SquareMat SquareMat::operator/(const int divide) const
     {
+        if(divide == 0)
+            throw std::invalid_argument("Can't divide by zero");
+        
         SquareMat divMat(size);
 
         for(int i = 0; i < size; i++)
@@ -632,9 +636,13 @@ namespace matrixImp {
      * @brief Divides the current matrix by a scalar.
      * @param div The scalar divisor.
      * @return Reference to the updated matrix.
+     * @throws Exception if div is zero
      */
     SquareMat &SquareMat::operator/=(int div)
     {
+        if(div == 0)
+            throw std::invalid_argument("Can't divide by zero");
+
         *this = *this / div;
         return *this;
     }

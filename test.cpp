@@ -166,6 +166,8 @@ TEST_CASE_FIXTURE(Matrices, "Operator% Scalar")
 
 TEST_CASE_FIXTURE(Matrices, "Operator/")
 {
+    CHECK_THROWS(first / 0);
+
     SquareMat result = second / 8;
 
     CHECK(result[0][0] == 1.25);
@@ -492,6 +494,8 @@ TEST_CASE_FIXTURE(Matrices, "Operator%= Scalar")
 
 TEST_CASE_FIXTURE(Matrices, "Operator/")
 {
+    CHECK_THROWS(first / 0);
+    
     second /= 8;
 
     CHECK(second[0][0] == 1.25);
